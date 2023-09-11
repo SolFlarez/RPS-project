@@ -83,6 +83,7 @@ let losses = [
   "You lose! Rock beats scissors.",
 ];
 
+const bodyDiv = document.querySelector("body");
 const buttonContainer = document.querySelector("body > div.button-container");
 const scoreContainer = document.querySelector("body > div.score-container");
 
@@ -100,9 +101,11 @@ const textResultDiv = document.querySelector(".text-result");
 const vsDiv = document.querySelector("p");
 
 textResultDiv.style.fontSize = "50px";
-vsDiv.style.fontSize = "60px";
 playerScoreResultDiv.style.fontSize = "50px";
 computerScoreResultDiv.style.fontSize = "50px";
+computerScoreResultDiv.style.paddingLeft = "45px";
+
+textResultDiv.style.paddingTop = "25px";
 
 let playerScoreCount = 0;
 let cpuScoreCount = 0;
@@ -118,7 +121,6 @@ const cpuWinText = "Gamer Over! The computer wins!";
 const onButtonClick = allButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const result = round(button.id, getComputerChoice());
-    vsDiv.textContent = "VS";
     if (wins.includes(result)) {
       playerScoreCount++;
     } else if (losses.includes(result)) {
