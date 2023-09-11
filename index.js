@@ -118,6 +118,7 @@ const cpuWinText = "Gamer Over! The computer wins!";
 const onButtonClick = allButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const result = round(button.id, getComputerChoice());
+    vsDiv.textContent = "VS";
     if (wins.includes(result)) {
       playerScoreCount++;
     } else if (losses.includes(result)) {
