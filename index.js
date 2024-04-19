@@ -3,22 +3,6 @@ const getComputerChoice = () => {
   return choices[Math.floor(Math.random() * 3)];
 };
 
-const getplayerChoice = () => {
-  const answers = ["rock", "paper", "scissors"];
-  const result = prompt(
-    "Please enter 'rock', 'paper', or 'scissors'."
-  ).toLowerCase();
-  while (!answers.includes(result)) {
-    console.log(
-      'Invalid input, please choose only "rock", "paper", or "scissors".'
-    );
-    result = prompt(
-      "Please enter 'rock', 'paper', or 'scissors'."
-    ).toLowerCase();
-  }
-  return result;
-};
-
 const round = (playerChoice, computerChoice) => {
   switch (playerChoice.toLowerCase()) {
     case "rock":
@@ -50,27 +34,6 @@ const round = (playerChoice, computerChoice) => {
       break;
   }
 };
-// -play 5 rounds, make 2 arrays one for wins and one for losses. After a round, add a +1 or -1 to tracker
-//         const game = () => {
-//             let wins = ["You win! Rock beats scissors.", "You win! Paper beats rock.", "You win! Scissors beats paper."]
-//             let losses = ["You lose! Paper beats rock.", "You lose! Scissors beats paper.", "You lose! Rock beats scissors."]
-//             let tracker = 0
-//             for (i = 0; i < 5; i++) {
-//                 const result = round(getplayerChoice(), getComputerChoice())
-//                 if (result.includes(wins)) {
-//                     tracker += 1
-//                 } else if (result.includes(losses)) {
-//                     tracker += -1
-//                 } console.log(result)
-//             }
-//             if (tracker > 0) {
-//                 return 'You win the game!'
-//     } else {
-//         return "The computer wins!"
-//     }
-// }
-
-// game()
 
 let wins = [
   "You win! Rock beats scissors.",
@@ -100,10 +63,10 @@ const computerScoreResultDiv = document.querySelector(".cpu-score-result");
 const textResultDiv = document.querySelector(".text-result");
 const vsDiv = document.querySelector("p");
 
-textResultDiv.style.fontSize = "50px";
-playerScoreResultDiv.style.fontSize = "50px";
-computerScoreResultDiv.style.fontSize = "50px";
-computerScoreResultDiv.style.paddingLeft = "45px";
+textResultDiv.style.fontSize = "25px";
+playerScoreResultDiv.style.fontSize = "25px";
+computerScoreResultDiv.style.fontSize = "25px";
+computerScoreResultDiv.style.paddingLeft = "25px";
 
 textResultDiv.style.paddingTop = "25px";
 
@@ -112,11 +75,6 @@ let cpuScoreCount = 0;
 
 const playerWinText = "Victory!!! You have won the game!";
 const cpuWinText = "Gamer Over! The computer wins!";
-
-// When a button is clicked we want to
-// 1. Play a round determining winner and loser or tie
-// 2. update the text result based on the round
-// 3. update the score result based on the round
 
 const onButtonClick = allButtons.forEach((button) => {
   button.addEventListener("click", () => {

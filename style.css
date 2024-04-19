@@ -1,0 +1,20 @@
+header {
+  display: flex;
+}
+
+button-container {
+  display: flex;
+  margin: auto;
+  max-height: 50px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
